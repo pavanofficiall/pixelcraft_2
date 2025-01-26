@@ -10,15 +10,15 @@ return (
     <StudioEditor
       className="flex-1"
       options={{
-        licenseKey: '7900dc5163b2453a9c68d04c129a4cd6c17185a51fb9451d8c0e24ed96634ed2',
+        licenseKey: '485395a83d144f27923d343278c74551df06d19a159b47ae97baf2772c36657d',
         project: {
           type: 'web',
           // TODO: replace with a unique id for your projects. e.g. an uuid
-          id: 'UNIQUE_PROJECT_ID'
+          id: 'project-12345' // Replace with a unique project ID
         },
         identity: {
           // TODO: replace with a unique id for your end users. e.g. an uuid
-          id: 'UNIQUE_END_USER_ID'
+          id: 'user-67890' // Replace with a unique end-user ID
         },
         assets: {
           storageType: 'cloud'
