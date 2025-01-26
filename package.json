@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "@grapesjs/studio-sdk": "^1.0.29",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "grapesjs": "^0.22.5",
+    "grapesjs-blocks-basic": "^1.0.2",
+    "grapesjs-custom-code": "^1.0.2",
+    "grapesjs-navbar": "^1.0.2",
+    "grapesjs-plugin-export": "^1.0.12",
+    "grapesjs-plugin-forms": "^2.0.6",
+    "grapesjs-preset-webpage": "^1.0.3",
+    "grapesjs-tabs": "^1.0.6",
+    "grapesjs-tooltip": "^0.1.8",
+    "react-responsive-carousel": "^3.2.23",
+    "react-slick": "^0.30.3",
+    "slick-carousel": "^1.8.1",
+    "stripe": "^17.5.0"
+  }
+}

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Sci-Fi Blog</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #f0f0f0;
+            background: linear-gradient(120deg, #0d0d0d, #1a1a1a);
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: #1a1a2e;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #00d4ff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #f39c12;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(120deg, #1a1a2e, #0f3460);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Section Headings */
+        .section-heading {
+            text-align: center;
+            font-size: 2rem;
+            margin: 2rem 0 1rem;
+            color: #00d4ff;
+        }
+
+        /* Card Layout */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding: 2rem;
+            justify-content: center;
+        }
+
+        .card {
+            background: #212f45;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 300px;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1rem;
+        }
+
+        .card-content h3 {
+            margin: 0 0 0.5rem;
+            font-size: 1.5rem;
+            color: #00d4ff;
+        }
+
+        .card-content p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* About Section */
+        .about {
+            padding: 4rem 2rem;
+            background: linear-gradient(120deg, #0f3460, #16213e);
+            text-align: center;
+        }
+
+        .about p {
+            font-size: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 2rem;
+            background: linear-gradient(120deg, #16213e, #1a1a2e);
+            text-align: center;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact form input,
+        .contact form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 5px;
+            background: #212f45;
+            color: #f0f0f0;
+        }
+
+        .contact form button {
+            padding: 0.8rem 2rem;
+            border: none;
+            background: #00d4ff;
+            color: #1a1a1a;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact form button:hover {
+            background: #f39c12;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #1a1a2e;
+            color: #00d4ff;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #f39c12;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Sci-Fi Blog</div>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#articles">Articles</a>
+            <a href="#technology">Technology</a>
+            <a href="#galaxy">Galaxy</a>
+            <a href="#future">Future</a>
+            <a href="#aliens">Aliens</a>
+            <a href="#space-travel">Space Travel</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1>Welcome to the Future</h1>
+        <p>Explore the latest in science fiction, futuristic technology, and cosmic adventures.</p>
+    </section>
+
+    <section id="articles">
+        <h2 class="section-heading">Latest Articles</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="https://i.postimg.cc/2yTr4rhs/user1.jpg" alt="Futuristic City">
+                <div class="card-content">
+                    <h3>Futuristic Cities</h3>
+                    <p>Discover the wonders of tomorrow with our take on futuristic cityscapes and architecture.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://i.postimg.cc/2yTr4rhs/user1.jpg" alt="Space Exploration">
+                <div class="card-content">
+                    <h3>Space Exploration</h3>
+                    <p>Delve into the mysteries of the universe and the advances in space travel.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://i.postimg.cc/2yTr4rhs/user1.jpg" alt="AI Revolution">
+                <div class="card-content">
+                    <h3>AI Revolution</h3>
+                    <p>Learn how artificial intelligence is shaping our future and driving innovation.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://i.postimg.cc/2yTr4rhs/user1.jpg" alt="Alien Life">
+                <div class="card-content">
+                    <h3>Alien Life</h3>
+                    <p>Speculate on the existence of alien life and what it means for humanity.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://i.postimg.cc/2yTr4rhs/user1.jpg" alt="Interstellar Travel">
+                <div class="card-content">
+                    <h3>Interstellar Travel</h3>
+                    <p>Journey through the possibilities of faster-than-light travel and wormholes.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://i.postimg.cc/2yTr4rhs/user1.jpg" alt="Virtual Worlds">
+                <div class="card-content">
+                    <h3>Virtual Worlds</h3>
+                    <p>Immerse yourself in the future of virtual reality and its limitless applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="technology">
+        <h2 class="section-heading">The Future of Technology</h2>
+        <p>Advances in technology are reshaping our world. From AI to quantum computing, explore the innovations shaping tomorrow.</p>
+    </section>
+
+    <section id="galaxy">
+        <h2 class="section-heading">The Galaxy Awaits</h2>
+        <p>Our galaxy holds countless mysteries. Learn about star systems, black holes, and the beauty of the cosmos.</p>
+    </section>
+
+    <section id="future">
+        <h2 class="section-heading">Future Visions</h2>
+        <p>What will the future hold? Discover speculative ideas and visionary concepts from thinkers and creators.</p>
+    </section>
+
+    <section id="aliens">
+        <h2 class="section-heading">Aliens Among Us?</h2>
+        <p>Are we alone in the universe? Dive into theories and evidence about extraterrestrial life.</p>
+    </section>
+
+    <section id="space-travel">
+        <h2 class="section-heading">Space Travel</h2>
+        <p>Space exploration is humanity's next frontier. Learn about rockets, spacecraft, and interstellar travel possibilities.</p>
+    </section>
+
+    <section id="about" class="about">
+        <h2 class="section-heading">About Us</h2>
+        <p>We are passionate about exploring the unknown and imagining the future. Our mission is to share insights, stories, and ideas that inspire curiosity and creativity in the realms of science fiction, technology, and beyond.</p>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-heading">Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Sci-Fi Blog. Designed with love for the future. <a href="#">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>
