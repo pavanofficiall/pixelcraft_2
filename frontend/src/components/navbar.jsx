@@ -1,18 +1,32 @@
-// src/components/Navbar.jsx
 import React, { useState } from 'react';
 import { SignInButton, UserButton, useUser } from '@clerk/clerk-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo1.png';
 
 const Navbar = () => {
   const { isSignedIn } = useUser();
   const location = useLocation();
-
+  const navigate = useNavigate(); 
   const isDashboard = location.pathname === '/dashboard';
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showPopover, setShowPopover] = useState(false); 
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleDashboardClick = (e) => {
+    e.preventDefault(); 
+
+    if (!isSignedIn) {
+      setShowPopover(true);
+    } else {
+      navigate('/dashboard'); 
+    }
+  };
+
+  const closePopover = () => {
+    setShowPopover(false); 
   };
 
   return (
@@ -71,6 +85,7 @@ const Navbar = () => {
           </a>
           <a
             href="/dashboard"
+            onClick={handleDashboardClick} // Handle Dashboard click
             className="block px-4 py-2 text-xl font-semibold text-stone-900 hover:text-blue-900 transition-colors duration-200 hover:scale-105 md:inline"
           >
             Dashboard
@@ -99,6 +114,29 @@ const Navbar = () => {
           )}
         </div>
       </div>
+
+      {/* Popover for not signed in */}
+      {showPopover && (
+  <>
+    {/* Backdrop Blur Effect */}
+    <div className="fixed inset-0 bg-stone-900 bg-opacity-50 backdrop-blur-lg z-40 "  />
+
+    {/* Popover */}
+    <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 bg-white p-9 rounded-lg shadow-xl z-50">
+      <h3 className="text-4xl font-semibold text-stone-900">Sign In Required</h3>
+      <p className=" text-xl text-stone-700">You need to sign in to access the dashboard.</p>
+      <div className="mt-4 flex justify-end">
+        <button
+          onClick={closePopover}
+          className="px-4 py-2 bg-blue-600 text-white rounded-full"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </>
+)}
+
     </nav>
   );
 };
