@@ -146,9 +146,9 @@ const Home = () => {
       </section>
 
       {/* Pricing Section */}
-      <section id="vip-features" className="py-12 bg-gray-900">
+      <section id="vip-features" className="py-12 bg-gray-200">
         <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-white text-center mb-12">VIP Features</h2>
+          <h2 className="text-4xl font-bold  text-center mb-12">VIP Features</h2>
           <div className="flex flex-wrap justify-center">
             <motion.div
               className="w-full md:w-1/2 lg:w-1/3 p-4"
@@ -177,64 +177,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-       {/* Contact Form Section */}
-       <section className="py-20 bg-stone-400">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-                Contact Us
-              </h2>
-              <p className="mt-4 text-lg text-gray-700">
-                Fill out the form below and we'll get back to you as soon as possible.
-              </p>
-            </div>
-
-            <div className="max-w-3xl mx-auto">
-              <form className="bg-white p-8 rounded-lg shadow-lg">
-                <div className="mb-6">
-                  <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    required
-                  />
-                </div>
-                <div className="mb-6">
-                  <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    required
-                  />
-                </div>
-                <div className="mb-6">
-                  <label htmlFor="message" className="block text-gray-700 font-semibold mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    rows="6"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    required
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full px-4 py-2 bg-blue-600 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
-          </div>
-        </section>
-
+       
      
     </div>
   );

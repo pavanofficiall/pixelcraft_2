@@ -1,23 +1,25 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const app = express();
+require('dotenv').config()
+const express = require('express')
+const mongoose = require('mongoose')
+const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
+const helmet = require('helmet')
+const rateLimit = require('express-rate-limit')
+const cors = require('cors')
 
-app.use(bodyParser.json());
-app.use(cors());
+const app = express()
+app.use(express.json())
+app.use(helmet())
+app.use(cors({ origin: 'http://localhost:3000' }))
 
-let userSubscriptions = {}; // In-memory storage for simplicity
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100
+})
+app.use(limiter)
 
-app.post('/save-subscription', (req, res) => {
-  const { userId, subscription } = req.body;
-  userSubscriptions[userId] = subscription;
-  res.status(200).json({ message: 'Subscription saved successfully' });
-});
+mongoose.connect(process.env.MONGO_URI)
 
-app.get('/get-subscription/:userId', (req, res) => {
-  const { userId } = req.params;
-  const subscription = userSubscriptions[userId] || 'basic';
-  res.status(200).json({ subscription });
-});
 
-app.listen(3001, () => console.log('Server running on port 3001'));
+const PORT = process.env.PORT || 5000
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`))

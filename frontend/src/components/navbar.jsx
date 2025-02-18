@@ -84,6 +84,12 @@ const Navbar = () => {
             Features
           </a>
           <a
+            href="/docs"
+            className="block px-4 py-2 text-xl font-semibold text-stone-900 hover:text-blue-900 transition-colors duration-200 hover:scale-105 md:inline"
+          >
+            Documentation
+          </a>
+          <a
             href="/dashboard"
             onClick={handleDashboardClick} // Handle Dashboard click
             className="block px-4 py-2 text-xl font-semibold text-stone-900 hover:text-blue-900 transition-colors duration-200 hover:scale-105 md:inline"
@@ -132,6 +138,11 @@ const Navbar = () => {
         >
           Close
         </button>
+        <SignInButton mode="modal">
+              <button className="bg-black text-white font-bold ml-4 py-2 px-4 rounded-full shadow-lg transition-all duration-200 transform hover:shadow-2xl hover:scale-105">
+                Sign In
+              </button>
+            </SignInButton>
       </div>
     </div>
   </>
